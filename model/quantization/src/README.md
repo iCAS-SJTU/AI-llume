@@ -16,13 +16,16 @@ This script performs quantization on YOLOv5 models using the Vitis AI quantizer.
 
 ## Usage
 
-To run the quantization script, you should setup the pynq virtual environment inside Vitis-AI docker first:
+To run the quantization script, you should setup the vitis-ai-pytorch virtual environment inside Vitis-AI docker first:
 ```bash
-source /etc/profile.d/pynq-venv.sh
+conda activate vitis-ai-pytorch
 ```
 Then, execute the `quantize.py` script to perform quantization:
 ```bash
-python /path/to/your_project/quantize.py --mode calib  # For calibration mode
-python /path/to/your_project/quantize.py --mode test   # For testing mode
+# For calibration mode
+python /path/to/your_project/quantize.py --quant_mode calib --weights /path/to/your/weights --dataset /path/to/your/dataset/ 
+
+# For testing mode
+python path/to/your_project/quantize.py --quant_mode test --weights /path/to/your/weights --dataset /path/to/your/dataset/   
 ```
 
